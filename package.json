@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kodcanlisi/helpful-js/issues"
   },
-  "homepage": "https://github.com/kodcanlisi/helpful-js#readme"
+  "homepage": "https://github.com/kodcanlisi/helpful-js#readme",
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  }
 }
