@@ -1,0 +1,33 @@
+{
+    "extends": [
+        "airbnb-typescript/base",
+        "eslint:recommended", 
+        "plugin:@typescript-eslint/recommended"
+    ],
+     "parser": "@typescript-eslint/parser",
+    
+    "plugins": ["@typescript-eslint"],
+    "parserOptions": {
+        "project":"./tsconfig.json",
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "linebreak-style" : 0,
+        "indent": "off",
+        "@typescript-eslint/indent": ["error"],
+        
+        "@typescript-eslint/rule-name":"off",
+        "@typescript-eslint/comma-dangle":"off",
+        "@typescript-eslint/dot-notation":"off",
+
+        "keyword-spacing": "off",
+        "@typescript-eslint/keyword-spacing": ["error"],
+
+        "@typescript-eslint/no-shadow":"off",
+        "@typescript-eslint/no-redeclare":"off",
+        "@typescript-eslint/no-loop-func":"off",
+        
+        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterOverload": true }]
+    }
+}
