@@ -2,9 +2,11 @@
     "extends": [
         "airbnb-typescript/base",
         "eslint:recommended", 
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
     ],
      "parser": "@typescript-eslint/parser",
+     
     
     "plugins": ["@typescript-eslint"],
     "parserOptions": {
@@ -15,6 +17,8 @@
     "rules": {
         "linebreak-style" : 0,
         "indent": "off",
+        "no-dupe-class-members": "off",
+        "@typescript-eslint/interface-name-prefix": [ "error", { "prefixWithI": "always" }],
         "@typescript-eslint/indent": ["error"],
         
         "@typescript-eslint/rule-name":"off",
@@ -28,6 +32,8 @@
         "@typescript-eslint/no-redeclare":"off",
         "@typescript-eslint/no-loop-func":"off",
         
-        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterOverload": true }]
+        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterOverload": true }],
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars-experimental": "error"
     }
 }
