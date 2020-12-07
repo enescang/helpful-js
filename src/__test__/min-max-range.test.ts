@@ -12,7 +12,7 @@ describe('Helpful Js Test', () => {
     expect(min).toBe(true);
 
     helper.set(30);
-    min = helper.min(30);
-    expect(min).toBe(true);
+    min = helper.min(30, false);
+    expect(min).toBe(false);
   });
 });
