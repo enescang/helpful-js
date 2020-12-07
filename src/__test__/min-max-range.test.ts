@@ -15,4 +15,22 @@ describe('Helpful Js Test', () => {
     min = helper.min(30, false);
     expect(min).toBe(false);
   });
+
+  test('test the <max> function', () => {
+    const helper = new HelperJs();
+    let max = helper.set(22).max(30);
+    expect(max).toBe(true);
+
+    max = helper.set(19).max(12);
+    expect(max).toBe(false);
+
+    max = helper.set(71).max(113);
+    expect(max).toBe(true);
+
+    max = helper.set(11).max(11, false);
+    expect(max).toBe(false);
+
+    max = helper.set(23).max(23, true);
+    expect(max).toBe(true);
+  });
 });

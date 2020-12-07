@@ -5,6 +5,10 @@ interface IHelpfulJs {
   // min
   min(num: number): boolean;
   min(num: number, inclusive: boolean): boolean;
+
+  // max
+  max(num: number): boolean;
+  max(num: number, inclusive: boolean): boolean;
 }
 
 interface IHelpfulJsInput {
