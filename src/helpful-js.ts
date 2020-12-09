@@ -1,6 +1,7 @@
 import { IHelpfulJs } from './interface/interfaces';
 
 class HelpfulJs implements IHelpfulJs {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   input: any = '';
 
   // #region SET
@@ -26,6 +27,7 @@ class HelpfulJs implements IHelpfulJs {
   }
   // #endregion
 
+  // #region MAX
   max(num: number): boolean;
   max(num: number, inclusive?: boolean): boolean;
 
@@ -35,6 +37,12 @@ class HelpfulJs implements IHelpfulJs {
     // isInclusive:true => less than
     // isInclusive:false => less than or equal
     return isInclusive === true ? input < max : input <= max;
+  }
+  // #endregion MAX
+
+  between(min: number, max: number): boolean {
+    const { input } = this;
+    return input >= min && input <= max;
   }
 }
 
