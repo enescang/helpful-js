@@ -11,6 +11,10 @@ interface IHelpfulJs {
   max(num: number, inclusive: boolean): boolean;
 
   between(min: number, max: number): boolean;
+
+  // removeChar
+  removeChar(char: string, ignoreCase?: boolean): string;
+  removeChar(chars: Array<string>, ignoreCase?: boolean): string;
 }
 
 interface IHelpfulJsInput {

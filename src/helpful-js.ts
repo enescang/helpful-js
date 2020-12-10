@@ -1,4 +1,5 @@
 import { IHelpfulJs } from './interface/interfaces';
+import * as Utils from './utils/Utils';
 
 class HelpfulJs implements IHelpfulJs {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,10 +21,10 @@ class HelpfulJs implements IHelpfulJs {
 
   min(min: number, inclusive?: boolean): boolean {
     const { input } = this;
-    const isInclusive = typeof inclusive !== 'undefined' && inclusive === false;
-    // isInclusive:true => greater than
-    // isInclusive:false => greater than or equal
-    return isInclusive === true ? input > min : input >= min;
+    const isExclusive = typeof inclusive !== 'undefined' && inclusive === false;
+    // isExclusive:true => greater than
+    // isExclusive:false => greater than or equal
+    return isExclusive === true ? input > min : input >= min;
   }
   // #endregion
 
@@ -33,10 +34,10 @@ class HelpfulJs implements IHelpfulJs {
 
   max(max: number, inclusive?: boolean): boolean {
     const { input } = this;
-    const isInclusive = typeof inclusive !== 'undefined' && inclusive === false;
-    // isInclusive:true => less than
-    // isInclusive:false => less than or equal
-    return isInclusive === true ? input < max : input <= max;
+    const isExclusive = typeof inclusive !== 'undefined' && inclusive === false;
+    // isExclusive:true => less than
+    // isExclusive:false => less than or equal
+    return isExclusive === true ? input < max : input <= max;
   }
   // #endregion MAX
 
@@ -44,6 +45,31 @@ class HelpfulJs implements IHelpfulJs {
     const { input } = this;
     return input >= min && input <= max;
   }
+
+  // #region
+  removeChar(char: string, ignoreCase?: boolean): string;
+  removeChar(chars: Array<string>, ignoreCase?: boolean): string;
+  removeChar(chars: string | Array<string>, ignoreCase?: boolean): string {
+    let { input } = this;
+    input = Utils.TurkisToEnglish(input);
+    const ignore = ignoreCase === false ? '' : 'i';
+    const pattern = `g${ignore}`;
+    let remove: any;
+    if (typeof chars === 'string') {
+      const charsLength = chars.length;
+      if (charsLength === 1) {
+        remove = chars;
+      } else {
+        remove = chars.split(',').join('');
+      }
+    }
+    if (typeof chars === 'object') {
+      remove = chars.join('');
+    }
+    const regex = new RegExp(remove, pattern);
+    return input.replace(regex, '');
+  }
+  // #endregion
 }
 
 export default HelpfulJs;
