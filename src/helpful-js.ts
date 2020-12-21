@@ -8,8 +8,9 @@ class HelpfulJs implements IHelpfulJs {
   // #region SET
   set(num: number): HelpfulJs;
   set(str: string): HelpfulJs;
+  set(arr: Array<string>): HelpfulJs;
 
-  set(param: string | number): HelpfulJs {
+  set(param: string | number | Array<string>): HelpfulJs {
     this.input = param;
     return this;
   }
