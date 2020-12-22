@@ -1,8 +1,8 @@
 interface IHelpfulJs {
-  set(num: number): void;
-  set(str: string): void;
-  set(arr: Array<string>): void;
-  set(obj: object): void;
+  set(num: number): IHelpfulJs;
+  set(str: string): IHelpfulJs;
+  set(arr: Array<string>): IHelpfulJs;
+  set(obj: object): IHelpfulJs;
 
   // min
   min(num: number): boolean;
