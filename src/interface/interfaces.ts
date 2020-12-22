@@ -2,6 +2,7 @@ interface IHelpfulJs {
   set(num: number): void;
   set(str: string): void;
   set(arr: Array<string>): void;
+  set(obj: object): void;
 
   // min
   min(num: number): boolean;

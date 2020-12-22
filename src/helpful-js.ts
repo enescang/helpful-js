@@ -10,7 +10,7 @@ class HelpfulJs implements IHelpfulJs {
   set(str: string): HelpfulJs;
   set(arr: Array<string>): HelpfulJs;
 
-  set(param: string | number | Array<string>): HelpfulJs {
+  set(param: string | number | Array<string> | object): HelpfulJs {
     this.input = param;
     return this;
   }
