@@ -9,6 +9,7 @@ class HelpfulJs implements IHelpfulJs {
   set(num: number): HelpfulJs;
   set(str: string): HelpfulJs;
   set(arr: Array<string>): HelpfulJs;
+  set(obj: object): HelpfulJs;
 
   set(param: string | number | Array<string> | object): HelpfulJs {
     this.input = param;
@@ -47,7 +48,7 @@ class HelpfulJs implements IHelpfulJs {
     return input >= min && input <= max;
   }
 
-  // #region
+  // #region REMOVECHAR
   removeChar(char: string, ignoreCase?: boolean): string;
   removeChar(chars: Array<string>, ignoreCase?: boolean): string;
   removeChar(chars: string | Array<string>, ignoreCase?: boolean): string {
@@ -70,7 +71,20 @@ class HelpfulJs implements IHelpfulJs {
     const regex = new RegExp(remove, pattern);
     return input.replace(regex, '');
   }
-  // #endregion
+  // #endregion REMOVECHAR
+
+  // #region MUSTINCLUDE
+  mustInclude(arr: Array<string>): void {
+    const { input } = this;
+    if (typeof input === 'object') {
+      for (let i = 0; i < arr.length; i += 1) {
+        if (typeof input[arr[i]] === 'undefined') {
+          throw new Error(`${arr[i]} is not included in the input`);
+        }
+      }
+    }
+  }
+  // #endregion MUSTINCLUDE
 }
 
 export default HelpfulJs;
