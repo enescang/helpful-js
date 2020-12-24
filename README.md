@@ -45,3 +45,11 @@ helper.set(myInput).max(40); // true: 32 <= 40
 helper.set(myInput).max(23, false); // false: 23 < 23
 helper.set(myInput).max(23, true); // true: 23 <= 23
 ```
+
+#### between
+If the input is between min and max number in between methods.
+``` js
+helper.set(12).between(10, 19); // true
+helper.set(7).between(0, 6); // false
+helper.set(10).between(10, 10); // true
+```
