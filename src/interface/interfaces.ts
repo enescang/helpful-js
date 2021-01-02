@@ -17,6 +17,9 @@ interface IHelpfulJs {
   // removeChar
   removeChar(char: string, ignoreCase?: boolean): string;
   removeChar(chars: Array<string>, ignoreCase?: boolean): string;
+
+  // mustInclude
+  mustInclude(arr: Array<string>): void;
 }
 
 interface IHelpfulJsInput {
