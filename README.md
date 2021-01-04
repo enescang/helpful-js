@@ -17,7 +17,7 @@ const helper =  new  HelpfulJs();
 ```
 You can use the <code>set</code> method to insert your input the helper. 
 
-#### min 
+## min 
 If the input is less than given number in min methods.
 There are 2 overrides:
 * min(num: number)
@@ -31,7 +31,7 @@ Check the below example:
  helper.set(myInput).min(32, false); // false: 32 > 32
  helper.set(myInput).min(32, true); // true: 32 >= 32
 ```
-#### max
+## max
 If the input is greater than given number in max methods.
 There are 2 overrides:
 * max(num: number)
@@ -46,7 +46,7 @@ helper.set(myInput).max(23, false); // false: 23 < 23
 helper.set(myInput).max(23, true); // true: 23 <= 23
 ```
 
-#### between
+## between
 If the input is between min and max number in between methods.
 ``` js
 helper.set(12).between(10, 19); // true
