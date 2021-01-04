@@ -85,6 +85,23 @@ class HelpfulJs implements IHelpfulJs {
     }
   }
   // #endregion MUSTINCLUDE
+
+  canBeAny(param: string | Array<any>): void {
+    const { input } = this;
+    let arr = param;
+    if (typeof param === 'string') {
+      arr = param.split('|');
+    }
+    for (let i = 0; i < arr.length; i += 1) {
+      if (arr.indexOf(input) > -1) {
+        break;
+      }
+
+      if (arr.indexOf(input) === -1 && i === arr.length - 1) {
+        throw new Error(`${input} not found!`);
+      }
+    }
+  }
 }
 
 export default HelpfulJs;

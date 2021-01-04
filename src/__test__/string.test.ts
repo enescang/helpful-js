@@ -21,4 +21,13 @@ describe('test the string methods', () => {
     str = helper.set('HeLLO WorlD').removeChar('l', ignoreCase);
     expect(str).toBe('HeO WorD');
   });
+
+  test('test', () => {
+    const helper = new HelpfulJs();
+
+    expect(() => { helper.set('enes').canBeAny('can|database'); }).toThrow(/not found/gi);
+    expect(() => { helper.set('kodlib').canBeAny('enes|kodlib|github'); }).not.toThrow(/not found/gi);
+    expect(() => { helper.set('github').canBeAny(['git', 'helper', 'db']); }).toThrow(/not found/gi);
+    expect(() => { helper.set('hello').canBeAny(['git', 'hello']); }).not.toThrow(/not found/gi);
+  });
 });
