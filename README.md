@@ -5,13 +5,13 @@ My aim is creating npm package with typescript using jest and eslint. In additio
 Installation
 ----
 ```
-$: ComingSoon
+$: npm i helpful-js-utils
 ```
 Usage
 --
 Create an instance like this:
 ``` js 
-import HelpfulJs from  'helpful-js';
+import HelpfulJs from  'helpful-js-utils';
 
 const helper =  new  HelpfulJs();
 ```
