@@ -1,8 +1,9 @@
 {
-  "name": "helpful-js",
-  "version": "1.0.0",
+  "name": "helpful-js-utils",
+  "version": "1.0.5",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/helpful-js.js",
+  "type": "module",
   "types": "dist",
   "scripts": {
     "test": "jest",
