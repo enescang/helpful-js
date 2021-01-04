@@ -53,3 +53,14 @@ helper.set(12).between(10, 19); // true
 helper.set(7).between(0, 6); // false
 helper.set(10).between(10, 10); // true
 ```
+
+## mustInclude
+If the input (object) has not the properties that given in mustInclude methods it will throw an Error.
+``` js
+const obj = {
+name: 'foo',
+other: 'bar'
+};
+helper.set(obj).mustInclude(['name', 'surname']); // throw new Error(...);
+helper.set(obj).mustInclude(['name', 'other']); // not throwing any Error
+```
