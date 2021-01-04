@@ -20,6 +20,9 @@ interface IHelpfulJs {
 
   // mustInclude
   mustInclude(arr: Array<string>): void;
+
+  // canBe
+  canBeAny(str: string | Array<any>): void;
 }
 
 interface IHelpfulJsInput {
