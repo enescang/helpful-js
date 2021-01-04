@@ -86,7 +86,7 @@ class HelpfulJs implements IHelpfulJs {
   }
   // #endregion MUSTINCLUDE
 
-  canBeAny(param: string | Array<any>): void {
+  canBeAny(param: string | Array<string>): void {
     const { input } = this;
     let arr = param;
     if (typeof param === 'string') {

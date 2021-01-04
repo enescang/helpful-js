@@ -22,7 +22,7 @@ interface IHelpfulJs {
   mustInclude(arr: Array<string>): void;
 
   // canBe
-  canBeAny(str: string | Array<any>): void;
+  canBeAny(str: string | Array<string>): void;
 }
 
 interface IHelpfulJsInput {
