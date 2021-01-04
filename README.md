@@ -64,3 +64,12 @@ other: 'bar'
 helper.set(obj).mustInclude(['name', 'surname']); // throw new Error(...);
 helper.set(obj).mustInclude(['name', 'other']); // not throwing any Error
 ```
+
+## canBeAny
+If the input value is not match any value of inside the canBeAny paramater it will throw an Error.
+``` js
+helper.set('enes').canBeAny('can|database'); // throw new Error(...)
+helper.set('kodlib').canBeAny('enes|kodlib|github'); // not throwing any Error
+helper.set('github').canBeAny(['git', 'helper','db']); //throw new Error(...)
+helper.set('hello').canBeAny(['git', 'hello']); // not throwing any Error
+```
